@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: "0 1 */3 * *"   # every 3 days at 08:00 Hanoi time
   workflow_dispatch:         # "Run workflow" button for a manual update
+  push:                      # rebuild right away when the page source is edited
+    branches: [main]
+    paths: ["_src/build.py", "_src/update.py"]
 
 permissions:
   contents: write
@@ -13,8 +16,8 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - name: Fetch ORCID, Crossref and Google Scholar data

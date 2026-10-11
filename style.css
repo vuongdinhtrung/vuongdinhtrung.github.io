@@ -163,3 +163,15 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
 @media (max-width:620px){.people.three{grid-template-columns:1fr}}
 
 @media (max-width:760px){.tagline{display:none}}
+
+/* ---------- round 3: 4 stats, metrics chips, certificate ---------- */
+.stats{grid-template-columns:repeat(4,1fr)}
+@media (max-width:900px){.stats{grid-template-columns:repeat(2,1fr)}}
+.metrics{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:6px}
+.metric{font-size:13px;font-weight:700;border-radius:4px;padding:1px 8px}
+.metric.if{background:#e8f0fe;color:#1a4fa3}
+.metric.sc{background:#fff1e0;color:#a35200}
+.mnote{font-size:13px;color:var(--muted)}
+figure.cert{margin:12px 0 4px;max-width:320px}
+figure.cert img{width:100%;border:1px solid var(--line);border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,.08)}
+figure.cert figcaption{font-size:13.5px;color:var(--muted);margin-top:4px}

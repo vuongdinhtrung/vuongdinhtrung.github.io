@@ -150,3 +150,16 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
   .avatar{width:56px;height:56px;font-size:20px}
   ol.pubs>li{padding-left:44px}
 }
+
+/* ---------- journal chips, 3-col people ---------- */
+.jchips{display:flex;flex-wrap:wrap;gap:8px}
+.jchip{font-size:15px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:3px 12px;color:#2c3a40}
+.people.three{grid-template-columns:repeat(3,1fr)}
+.people.three .person{grid-template-columns:56px 1fr;gap:12px;padding:14px}
+.people.three .avatar{width:56px;height:56px;font-size:19px}
+.people.three .person h4{font-size:18px}
+.people.three .aff{font-size:14.5px;margin-bottom:6px}
+@media (max-width:900px){.people.three{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.people.three{grid-template-columns:1fr}}
+
+@media (max-width:760px){.tagline{display:none}}

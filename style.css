@@ -237,3 +237,6 @@ footer{font-size:13.5px}
 .i-rm{background:#1d6e3a}
 .i-rm span{font-size:14px;font-weight:700;letter-spacing:.5px;font-family:"Lato",sans-serif}
 @media (max-width:760px){.intro .jpname{text-align:center}}
+
+.svc{margin:4px 0 10px;padding-left:22px}
+.svc li{margin:3px 0}

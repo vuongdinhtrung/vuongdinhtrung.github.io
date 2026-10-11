@@ -175,3 +175,58 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
 figure.cert{margin:12px 0 4px;max-width:320px}
 figure.cert img{width:100%;border:1px solid var(--line);border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,.08)}
 figure.cert figcaption{font-size:13.5px;color:var(--muted);margin-top:4px}
+
+/* ---------- round 4: compact typography, photo avatars ---------- */
+body{font-size:16px;line-height:1.55}
+.banner{height:260px}
+.nav{padding:12px 24px}
+.brand{font-size:20px}
+.menu{gap:6px 24px}
+.menu a{font-size:17px}
+.tagline{font-size:13px;bottom:14px;left:24px}
+main{padding:22px 0 34px}
+h1{font-size:38px;margin:14px 0 6px}
+h2{font-size:26px;margin:34px 0 12px}
+h3{font-size:18px;margin:22px 0 6px}
+.lead{font-size:17px;margin-bottom:14px}
+.intro{grid-template-columns:1fr 250px;gap:32px}
+.photo,.monogram{width:230px;height:230px;margin-top:30px}
+.icons a{width:38px;height:38px;font-size:18px}
+.stat{padding:10px}
+.stat .n{font-size:24px}
+.stat .l{font-size:13px}
+.row{grid-template-columns:120px 1fr;gap:14px;padding:8px 0}
+.when{font-size:14px}
+.what .sub{font-size:14.5px}
+.card{padding:14px 16px}
+.card h4{font-size:16.5px}
+.card p{font-size:15px}
+.person{grid-template-columns:64px 1fr;gap:14px;padding:14px}
+.avatar{width:64px;height:64px;font-size:22px}
+img.avatar{object-fit:cover;padding:0;display:block}
+.person h4{font-size:17px}
+.person .aff{font-size:14px}
+.person .meta{font-size:14px}
+.tag{font-size:12px}
+.people.three .person{grid-template-columns:50px 1fr;padding:12px}
+.people.three .avatar{width:50px;height:50px;font-size:17px}
+.people.three .person h4{font-size:16px}
+.people.three .aff{font-size:13.5px}
+ol.pubs>li{padding:9px 0 9px 46px}
+ol.pubs>li::before{top:9px;font-size:14px}
+.pt{font-size:15.5px}
+.pa,.pv{font-size:14.5px}
+.metric,.mnote{font-size:12px}
+.jchip{font-size:13.5px}
+.small{font-size:13.5px}
+footer{font-size:13.5px}
+@media (max-width:760px){
+  body{font-size:15.5px}
+  .banner{min-height:190px}
+  .menu a{font-size:15.5px}
+  h1{font-size:30px}
+  h2{font-size:23px}
+  .photo,.monogram{width:170px;height:170px;margin-top:8px}
+  .person{grid-template-columns:52px 1fr}
+  .avatar{width:52px;height:52px;font-size:18px}
+}

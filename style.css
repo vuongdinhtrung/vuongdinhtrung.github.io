@@ -1,0 +1,152 @@
+/* ============ Vuong Dinh Trung — personal academic site ============ */
+:root{
+  --ink:#1f2328;
+  --muted:#5b6670;
+  --line:#e6e9ec;
+  --link:#1565c0;
+  --accent:#0e7c86;
+  --accent-soft:#e6f4f5;
+  --bg:#ffffff;
+  --card:#f7f9fa;
+  --maxw:1040px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Lato",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:18px;line-height:1.6;
+}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 16px}
+
+/* ---------- banner + nav ---------- */
+.banner{
+  max-width:var(--maxw);margin:0 auto;height:300px;position:relative;
+  background:#04131d url("banner.svg") center/cover no-repeat;
+}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:14px 28px;
+}
+.brand{color:#fff;font-weight:700;font-size:22px;letter-spacing:.2px;white-space:nowrap}
+.brand:hover{text-decoration:none;opacity:.9}
+.menu{display:flex;flex-wrap:wrap;gap:6px 30px;list-style:none;margin:0;padding:0}
+.menu a{color:#e8fbfd;font-size:20px;padding-bottom:3px;border-bottom:2px solid transparent}
+.menu a:hover{text-decoration:none;border-bottom-color:#7fe7ee}
+.menu a.active{border-bottom-color:#ffffff;color:#fff}
+.tagline{
+  position:absolute;left:28px;bottom:18px;color:#bff4f8;font-size:15px;letter-spacing:2px;
+  text-transform:uppercase;opacity:.85
+}
+
+/* ---------- type ---------- */
+main{padding:28px 0 40px}
+h1{font-weight:400;font-size:48px;line-height:1.15;margin:18px 0 8px}
+h2{font-weight:400;font-size:34px;margin:46px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+h3{font-size:21px;margin:28px 0 8px;color:var(--accent)}
+p{margin:0 0 14px}
+.lead{color:var(--muted);font-size:20px;margin-bottom:18px}
+.small{font-size:15px;color:var(--muted)}
+b,strong{font-weight:700}
+
+/* ---------- intro (about) ---------- */
+.intro{display:grid;grid-template-columns:1fr 300px;gap:40px;align-items:start}
+.intro h1{margin-top:6px}
+.photo{width:270px;height:270px;border-radius:50%;object-fit:cover;display:block;margin:40px auto 0;
+  box-shadow:0 8px 28px rgba(4,40,52,.18)}
+.monogram{width:270px;height:270px;border-radius:50%;margin:40px auto 0;display:none;
+  align-items:center;justify-content:center;font-size:76px;font-weight:300;color:#fff;letter-spacing:2px;
+  background:radial-gradient(circle at 30% 25%,#19a6b2,#063542 70%)}
+.icons{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0 6px}
+.icons a{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:21px;transition:transform .15s}
+.icons a:hover{transform:translateY(-2px);text-decoration:none}
+.i-mail{background:#3d8bd8}.i-gs{background:#4285f4}.i-orcid{background:#a6ce39}
+.i-gh{background:#24292f}.i-li{background:#0a66c2}.i-fb{background:#1877f2}.i-cv{background:#0e7c86}
+
+/* ---------- stat strip ---------- */
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:30px 0 4px}
+.stat{background:var(--accent-soft);border-radius:10px;padding:14px 12px;text-align:center}
+.stat .n{display:block;font-size:30px;font-weight:700;color:var(--accent);line-height:1.1}
+.stat .l{font-size:14px;color:#33464d}
+
+/* ---------- CV rows ---------- */
+.cv{margin:0}
+.row{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:12px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:none}
+.when{color:var(--muted);font-size:16px;padding-top:2px}
+.what b{color:var(--ink)}
+.what .sub{display:block;color:var(--muted);font-size:16px}
+.what ul{margin:4px 0 0;padding-left:20px}
+
+/* ---------- research interest cards ---------- */
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.card h4{margin:0 0 6px;font-size:19px;color:var(--accent)}
+.card p{margin:0;font-size:16.5px;color:#39434b}
+
+/* ---------- people ---------- */
+.people{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.person{display:grid;grid-template-columns:76px 1fr;gap:16px;align-items:start;
+  background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
+.avatar{width:76px;height:76px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:26px;font-weight:700;letter-spacing:1px;
+  background:radial-gradient(circle at 30% 25%,#19a6b2,#0a4a55 75%)}
+.avatar.alt{background:radial-gradient(circle at 30% 25%,#4c8ff0,#1d3f7a 75%)}
+.avatar.warm{background:radial-gradient(circle at 30% 25%,#f0a04c,#8a4a12 75%)}
+.person h4{margin:0;font-size:20px}
+.person .aff{color:var(--muted);font-size:15.5px;line-height:1.45;margin:2px 0 8px}
+.person .meta{font-size:15.5px;margin:0}
+.tag{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.3px;color:var(--accent);
+  background:var(--accent-soft);border-radius:20px;padding:2px 10px;margin:0 6px 6px 0}
+.country{display:flex;align-items:center;gap:10px}
+.country .flag{width:36px;height:24px;border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+
+/* ---------- publications ---------- */
+.pubstats{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 6px}
+ol.pubs{list-style:none;counter-reset:p var(--start,0);padding:0;margin:0}
+ol.pubs>li{counter-increment:p;position:relative;padding:12px 0 12px 54px;border-bottom:1px solid var(--line)}
+ol.pubs>li::before{content:"[" counter(p) "]";position:absolute;left:0;top:12px;color:var(--muted);font-size:16px}
+ol.pubs.rev>li::before{content:"[" counter(p) "]"}
+.pt{font-weight:700;display:block}
+.pa{display:block;font-size:16.5px;color:#39434b}
+.pa b{color:var(--ink);text-decoration:underline;text-decoration-color:#9fd3d8;text-underline-offset:3px}
+.pv{display:block;font-size:16.5px}
+.pv i{color:var(--accent)}
+.btn{display:inline-block;font-size:13px;font-weight:700;border:1px solid #b9d4d7;border-radius:4px;
+  padding:0 7px;margin-left:6px;color:var(--accent);vertical-align:1px}
+.btn:hover{background:var(--accent-soft);text-decoration:none}
+.flag-feat{color:#b35900;border-color:#f0c48f}
+
+/* ---------- misc ---------- */
+.note{background:var(--accent-soft);border-left:4px solid var(--accent);padding:14px 18px;border-radius:6px;margin:18px 0}
+.map{width:100%;height:320px;border:0;border-radius:12px;margin-top:10px}
+footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);font-size:15px;text-align:center}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .stats{grid-template-columns:repeat(3,1fr)}
+  .people,.grid2{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  body{font-size:17px}
+  .banner{height:auto;min-height:210px}
+  .nav{flex-direction:column;align-items:flex-start;padding:14px 16px}
+  .menu{gap:4px 18px}
+  .menu a{font-size:17px}
+  .tagline{left:16px;font-size:12px;bottom:12px}
+  .intro{grid-template-columns:1fr;gap:0}
+  .intro .side{order:-1}
+  .photo,.monogram{width:190px;height:190px;margin:10px auto 0;font-size:54px}
+  h1{font-size:36px}
+  .intro h1,.intro .lead{text-align:center}
+  .icons{justify-content:center}
+  h2{font-size:28px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .row{grid-template-columns:1fr;gap:2px}
+  .person{grid-template-columns:56px 1fr;padding:14px}
+  .avatar{width:56px;height:56px;font-size:20px}
+  ol.pubs>li{padding-left:44px}
+}

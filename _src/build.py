@@ -326,6 +326,8 @@ ideas into research with real impact, followed by my collaborators.</p>
         "Fiber-based wearable textile biosensors.", ["1 joint presentation"], "warm")}
 {person("SC", "Si Chen", "Key Laboratory of Clothing Materials of Universities in Fujian, Quanzhou Normal University, China &middot; formerly Shinshu University, Japan",
         "Moisture-induced electric generators for self-powered wearables.", ["1 joint paper"])}
+{person("VN", "Van Nhat Nguyen", "Department of Materials Science and Engineering, National Tsing Hua University, Taiwan",
+        "", [], "alt")}
 </div>
 
 @@COLLAB@@

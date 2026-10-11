@@ -226,11 +226,10 @@ about = f"""
   <div class="stat"><span class="n">{N_ART}</span><span class="l">high-impact journal articles</span></div>
   <div class="stat"><span class="n">{MET.get("citations", "&ndash;")}</span><span class="l">citations</span></div>
   <div class="stat"><span class="n">{MET.get("h_index", "&ndash;")}</span><span class="l">h-index</span></div>
-  <div class="stat"><span class="n">4</span><span class="l">grants &middot; USD 457K</span></div>
+  <div class="stat"><span class="n">4</span><span class="l">grants contributed to (Co-PI / member) &middot; total USD 457K</span></div>
   <div class="stat"><span class="n">1</span><span class="l">patent</span></div>
   <div class="stat"><span class="n">{PEER}</span><span class="l">peer reviews for leading journals</span></div>
 </section>
-<p class="small statnote">Citations and h-index from <a href="{MET_URL}">{MET_SRC}</a>, peer reviews from <a href="{LINKS['orcid']}">ORCID</a>. Updated automatically, last checked {UPDATED}.</p>
 
 <h2>Research Interests</h2>
 <div class="grid2">
@@ -478,9 +477,6 @@ for y in years:
 
 publications = f"""
 <h1>Publications</h1>
-<p class="lead">{N_ART} journal articles, 1 book chapter and 1 patent.
-{MET.get("citations", "&ndash;")} citations, h-index {MET.get("h_index", "&ndash;")}, i10-index {MET.get("i10_index", "&ndash;")} on <a href="{MET_URL}">{MET_SRC}</a> ({UPDATED}).
-The list is synced with <a href="{LINKS['orcid']}">ORCID</a> every three days.</p>
 
 <h2>Journal articles</h2>
 <p class="small">IF: Journal Impact Factor (Clarivate JCR). Top %: Scopus CiteScore highest category percentile. Both from the latest editions available in the year each manuscript was submitted.</p>

@@ -249,3 +249,5 @@ footer{font-size:13.5px}
 /* round 8: no brand text in banner */
 .nav{justify-content:flex-end}
 @media (max-width:760px){.nav{align-items:flex-end}}
+
+.person .aff .ttl{color:var(--ink);font-weight:700;font-size:14px}

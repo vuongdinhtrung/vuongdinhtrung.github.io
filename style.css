@@ -230,3 +230,10 @@ footer{font-size:13.5px}
   .person{grid-template-columns:52px 1fr}
   .avatar{width:52px;height:52px;font-size:18px}
 }
+
+/* ---------- round 5 ---------- */
+.jpname{margin:-2px 0 4px;font-size:17px;color:#33464d;letter-spacing:1px}
+.jpname span{font-size:13px;color:var(--muted);letter-spacing:0}
+.i-rm{background:#1d6e3a}
+.i-rm span{font-size:14px;font-weight:700;letter-spacing:.5px;font-family:"Lato",sans-serif}
+@media (max-width:760px){.intro .jpname{text-align:center}}

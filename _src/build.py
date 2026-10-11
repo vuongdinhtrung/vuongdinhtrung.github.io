@@ -201,7 +201,7 @@ about = f"""
 <section class="intro">
   <div>
     <h1>Vuong Dinh Trung</h1>
-    <p class="lead">Postdoctoral Research Fellow &amp; Instructor &middot; VinUniversity, Hanoi</p>
+    <p class="lead">Postdoctoral Research Fellow (Researcher 200) &amp; Instructor &middot; VinUniversity, Hanoi</p>
     <p>I go by <b>Trung</b>. I am a postdoctoral research fellow and instructor at the <a href="{LINKS['cmit']}">Center for Materials Innovation and Technology (CMIT)</a>
     and the <a href="{LINKS['cecs']}">College of Engineering and Computer Science</a>, <a href="https://vinuni.edu.vn/">VinUniversity</a>, Vietnam, where I work
     on smart fibers.</p>

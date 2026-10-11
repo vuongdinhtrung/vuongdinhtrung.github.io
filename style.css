@@ -251,3 +251,10 @@ footer{font-size:13.5px}
 @media (max-width:760px){.nav{align-items:flex-end}}
 
 .person .aff .ttl{color:var(--ink);font-weight:700;font-size:14px}
+
+/* round 6: six stat tiles (3 x 2) and auto-update note */
+.stats{grid-template-columns:repeat(3,1fr)}
+@media (max-width:600px){.stats{grid-template-columns:repeat(2,1fr)}}
+.statnote{margin:8px 0 0;text-align:right}
+@media (max-width:600px){.statnote{text-align:left}}
+@media (max-width:760px){.intro{grid-template-columns:1fr;gap:0}}

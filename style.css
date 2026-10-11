@@ -245,3 +245,7 @@ footer{font-size:13.5px}
 .card.ri{padding:0;overflow:hidden;display:flex;flex-direction:column}
 .card.ri img{display:block;width:100%;height:auto;aspect-ratio:400/150;background:#04131d}
 .card.ri .cb{padding:12px 16px 14px}
+
+/* round 8: no brand text in banner */
+.nav{justify-content:flex-end}
+@media (max-width:760px){.nav{align-items:flex-end}}

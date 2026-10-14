@@ -6,7 +6,7 @@ Sources
 - Google Scholar profile page: citations, h-index, i10-index. If Scholar cannot be reached,
   the last known values are kept (OpenAlex is used only if no Scholar value exists yet).
 
-Run by .github/workflows/update.yml every 3 days. Standard library only.
+Run by .github/workflows/update.yml 3 times a day. Standard library only.
 """
 import datetime
 import json

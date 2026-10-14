@@ -5,7 +5,7 @@ OUT = sys.argv[1]
 YEAR = 2026
 UPDATED = "October 2026"
 
-# Auto-updated data (written by _src/update.py via GitHub Actions every 3 days)
+# Auto-updated data (written by _src/update.py via GitHub Actions 3 times a day)
 _DATA_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data.json")
 AUTO = json.load(open(_DATA_FILE, encoding="utf-8")) if os.path.exists(_DATA_FILE) else {}
 if AUTO.get("checked"):
@@ -201,8 +201,8 @@ about = f"""
 <section class="intro">
   <div>
     <h1>Vuong Dinh Trung</h1>
-    <p class="lead">Postdoctoral Research Fellow (Researcher 200) &amp; Instructor &middot; VinUniversity, Hanoi</p>
-    <p>I go by <b>Trung</b>. I am a postdoctoral research fellow and instructor at the <a href="{LINKS['cmit']}">Center for Materials Innovation and Technology (CMIT)</a>
+    <p class="lead">Postdoctoral Research Fellow (Researcher 200) &amp; Lab Instructor &middot; VinUniversity, Hanoi</p>
+    <p>I go by <b>Trung</b>. I am a postdoctoral research fellow and lab instructor at the <a href="{LINKS['cmit']}">Center for Materials Innovation and Technology (CMIT)</a>
     and the <a href="{LINKS['cecs']}">College of Engineering and Computer Science</a>, <a href="https://vinuni.edu.vn/">VinUniversity</a>, Vietnam, where I work
     on smart fibers.</p>
     <p>I received my D.Eng. (2025) and M.Eng. (2022) in Smart Materials Science and Technology from
@@ -252,7 +252,7 @@ about = f"""
 
 <h2>Positions</h2>
 {rows([
-    ("2025 &ndash;", '<b>Postdoctoral Research Fellow &amp; Instructor</b><span class="sub"><a href="https://cecs.vinuni.edu.vn/">College of Engineering &amp; Computer Science</a> and <a href="https://cmit.vinuni.edu.vn/">CMIT</a>, VinUniversity, Vietnam</span>'),
+    ("2025 &ndash;", '<b>Postdoctoral Research Fellow &amp; Lab Instructor</b><span class="sub"><a href="https://cecs.vinuni.edu.vn/">College of Engineering &amp; Computer Science</a> and <a href="https://cmit.vinuni.edu.vn/">CMIT</a>, VinUniversity, Vietnam</span>'),
     ("2026 &ndash;", '<b>Technical Advisor</b><span class="sub"><a href="https://eyhcnc.com/">EYH Industrial Joint Stock Company</a> and <a href="https://www.facebook.com/profile.php?id=61585326377855">Basement LAB</a>, Vietnam</span>'),
     ("2022 &ndash; 2025", '<b>Research Assistant</b><span class="sub"><a href="https://www.shinshu-u.ac.jp/faculty/textiles/english/">Faculty of Textile Science and Technology</a>, Shinshu University, Japan</span>'),
     ("2024", '<b>Contract Researcher</b><span class="sub"><a href="https://cei.vinuni.edu.vn/">Center for Environmental Intelligence</a>, VinUniversity, Vietnam</span>'),
@@ -546,6 +546,7 @@ news = f"""
 {rows([
     ("Sep 2026", '<a href="https://cmit.vinuni.edu.vn/%f0%9f%8c%9f-paper-published-in-advanced-fiber-materials-springer-nature-%f0%9f%8c%9f/"><b>Paper published in <i>Advanced Fiber Materials</i> (Springer Nature)</b></a><span class="sub">CMIT, VinUniversity &middot; on our skin-inspired electronic skin with controllable microcracks for high-fidelity pulse-wave monitoring</span>'),
     ("Sep 2026", '<a href="https://www.youtube.com/watch?v=8tj56NpUAaE"><b>VTV2 S-Tech #74: Multifunctional Fibers with Thermal Drawing Process</b></a><span class="sub">VTV2 television feature (in Vietnamese) &middot; YouTube</span>'),
+    ("Aug 2026", '<a href="https://laidlawscholars.network/posts/i-flew-across-the-world-to-sit-in-silence"><b>I flew across the world to sit in silence</b></a><span class="sub">Laidlaw Scholars Network &middot; a Cornell University student reflects on a research internship in our lab at VinUniversity</span>'),
     ("Jun 2026", '<a href="https://vinuni.edu.vn/icmit-2026-over-100-leading-materials-scientists-convene-at-vinuniversity/"><b>ICMIT 2026: Over 100 leading materials scientists convene at VinUniversity</b></a><span class="sub">VinUniversity News &middot; the conference I helped organize and where I chaired the Biomaterials &amp; Nanotechnology session</span>'),
     ("Jun 2026", '<a href="https://vinuni.edu.vn/breakthrough-research-from-vinuniversity-featured-in-the-worlds-top-materials-science-journal-advanced-materials/"><b>Breakthrough research from VinUniversity featured in the world&rsquo;s top materials science journal <i>Advanced Materials</i></b></a><span class="sub">VinUniversity News &middot; on our review of smart fibers for AI-integrated textiles</span>'),
 ])}
@@ -598,7 +599,7 @@ You may contact them directly by email or reach out to me first.</p>
 
 PAGES = [
     ("index.html", "Vuong Dinh Trung", about,
-     "Vuong Dinh Trung, postdoctoral research fellow and instructor at VinUniversity: smart fibers, wearable sensors and AI-enabled textiles."),
+     "Vuong Dinh Trung, postdoctoral research fellow and lab instructor at VinUniversity: smart fibers, wearable sensors and AI-enabled textiles."),
     ("team.html", "Team · Vuong Dinh Trung", team, "Close colleagues and collaborators of Vuong Dinh Trung."),
     ("publications.html", "Publications · Vuong Dinh Trung", publications, "Publications, patents and presentations of Vuong Dinh Trung."),
     ("outreach.html", "Outreach · Vuong Dinh Trung", outreach, "Editorial work, peer review, service and outreach of Vuong Dinh Trung."),

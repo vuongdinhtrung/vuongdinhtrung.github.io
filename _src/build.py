@@ -544,6 +544,7 @@ news = f"""
 <h1>In the news</h1>
 <p class="lead">Media coverage of our research and activities.</p>
 {rows([
+    ("Oct 2026", '<a href="https://mp.weixin.qq.com/s/EpFu_jx-Ac0hmXq3cx1Igg"><b>Controllable-Microcrack MXene Bionic Electronic Skin: High-Fidelity Pulse Acquisition for Early Warning of Vascular Health</b></a><span class="sub"><i>Advanced Fiber Materials</i> official WeChat account (in Chinese) &middot; on our skin-inspired electronic skin with controllable microcracks for high-fidelity pulse-wave monitoring</span>'),
     ("Sep 2026", '<a href="https://cmit.vinuni.edu.vn/%f0%9f%8c%9f-paper-published-in-advanced-fiber-materials-springer-nature-%f0%9f%8c%9f/"><b>Paper published in <i>Advanced Fiber Materials</i> (Springer Nature)</b></a><span class="sub">CMIT, VinUniversity &middot; on our skin-inspired electronic skin with controllable microcracks for high-fidelity pulse-wave monitoring</span>'),
     ("Sep 2026", '<a href="https://www.youtube.com/watch?v=8tj56NpUAaE"><b>VTV2 S-Tech #74: Multifunctional Fibers with Thermal Drawing Process</b></a><span class="sub">VTV2 television feature (in Vietnamese) &middot; YouTube</span>'),
     ("Aug 2026", '<a href="https://laidlawscholars.network/posts/i-flew-across-the-world-to-sit-in-silence"><b>I flew across the world to sit in silence</b></a><span class="sub">Laidlaw Scholars Network &middot; a Cornell University student reflects on a research internship in our lab at VinUniversity</span>'),

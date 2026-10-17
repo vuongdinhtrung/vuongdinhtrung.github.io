@@ -280,6 +280,7 @@ about = f"""
 {rows([
     ("Characterization", "XRD, Raman, XPS, SEM, TEM, FTIR, BET, tensile testing; electrochemical and electrical measurements (V&ndash;I&ndash;R, CV, LSV, EIS, GCD)"),
     ("Design &amp; code", "SolidWorks, Siemens NX, AutoCAD, COMSOL, Python, Arduino IDE, Origin, ChemDraw"),
+    ("AI &amp; machine learning", "Deep learning for sensor-signal recognition (CNN, LSTM), AI-driven inverse design, materials informatics, signal processing (FFT, wavelet); TensorFlow, PyTorch, scikit-learn; LLM-assisted research"),
     ("Manufacturing", "Semi-automated and CNC machining, 3D printing (additive manufacturing), thermal drawing"),
     ("Languages", "Vietnamese, English, Japanese"),
 ])}

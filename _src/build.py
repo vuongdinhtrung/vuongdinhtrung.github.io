@@ -480,6 +480,7 @@ for y in years:
 
 publications = f"""
 <h1>Publications</h1>
+<p class="lead">Journal articles, patents, books, book chapters and conference presentations.</p>
 
 <h2>Journal articles</h2>
 <p class="small">IF: Journal Impact Factor (Clarivate JCR). Top %: Scopus CiteScore highest category percentile. Both from the latest editions available in the year each manuscript was submitted.</p>

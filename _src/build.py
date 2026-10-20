@@ -5,7 +5,7 @@ OUT = sys.argv[1]
 YEAR = 2026
 UPDATED = "October 2026"
 
-# Auto-updated data (written by _src/update.py via GitHub Actions 3 times a day)
+# Auto-updated data (written by _src/update.py via GitHub Actions every hour)
 _DATA_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data.json")
 AUTO = json.load(open(_DATA_FILE, encoding="utf-8")) if os.path.exists(_DATA_FILE) else {}
 if AUTO.get("checked"):

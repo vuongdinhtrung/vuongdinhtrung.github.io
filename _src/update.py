@@ -6,13 +6,14 @@ Sources
 - Google Scholar profile page: citations, h-index, i10-index. If Scholar cannot be reached,
   the last known values are kept (OpenAlex is used only if no Scholar value exists yet).
 
-Run by .github/workflows/update.yml 3 times a day. Standard library only.
+Run by .github/workflows/update.yml every hour. Standard library only.
 """
 import datetime
 import json
 import os
 import re
 import sys
+import time
 import urllib.parse
 import urllib.request
 
@@ -30,7 +31,8 @@ def log(*a):
 
 
 def fetch(url, accept=None, timeout=30):
-    headers = {"User-Agent": UA, "Accept-Language": "en-US,en;q=0.9"}
+    headers = {"User-Agent": UA, "Accept-Language": "en-US,en;q=0.9",
+               "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"}
     if accept:
         headers["Accept"] = accept
     req = urllib.request.Request(url, headers=headers)
@@ -113,6 +115,21 @@ def scholar_metrics(page):
     return {"citations": int(vals[0]), "h_index": int(vals[2]), "i10_index": int(vals[4])}
 
 
+def scholar_fetch_metrics(attempts=3, waits=(20, 45)):
+    """Google Scholar often answers 403 to cloud servers; retry a few times before giving up."""
+    url = f"https://scholar.google.com/citations?user={SCHOLAR_USER}&hl=en"
+    last = None
+    for i in range(attempts):
+        try:
+            return scholar_metrics(fetch(url))
+        except Exception as e:
+            last = e
+            log(f"Google Scholar attempt {i + 1}/{attempts} failed:", e)
+            if i < attempts - 1:
+                time.sleep(waits[min(i, len(waits) - 1)])
+    raise last
+
+
 def openalex_metrics():
     a = fetch_json(f"https://api.openalex.org/authors/orcid:{ORCID}")
     s = a.get("summary_stats") or {}
@@ -159,7 +176,7 @@ def main():
     # Citation metrics
     metrics = data.get("metrics") or {}
     try:
-        m = scholar_metrics(fetch(f"https://scholar.google.com/citations?user={SCHOLAR_USER}&hl=en"))
+        m = scholar_fetch_metrics()
         metrics = {"source": "Google Scholar", **m}
         log("Google Scholar:", m)
     except Exception as e:

@@ -321,9 +321,9 @@ ideas into research with real impact, followed by my collaborators.</p>
         "Textile pressure and strain sensors, electronic skin, pulse-wave monitoring.", ["14 joint papers"], photo="weili-zhao.jpg")}
 {person("TL", "Tien Nu Hoang Lo", "Center for Materials Innovation and Technology and College of Engineering and Computer Science, VinUniversity, Vietnam",
         "Multimaterial fibers, droplet microfluidics, organic electronics.", ["2 joint papers"], "warm")}
-{person("YS", "Yanyan Sun", "School of Textile and Garment, Anhui Polytechnic University, China &middot; formerly a student at Shinshu University, Japan",
+{person("YS", "Yanyan Sun", "School of Textile and Garment, Anhui Polytechnic University, China &middot; formerly Shinshu University, Japan",
         "Textile and sewn strain sensors.", ["4 joint papers"], "alt")}
-{person("XH", "Xiaoyu Han", "College of Textiles and Apparel, Quanzhou Normal University, China &middot; formerly a student at Shinshu University, Japan",
+{person("XH", "Xiaoyu Han", "College of Textiles and Apparel, Quanzhou Normal University, China &middot; formerly Shinshu University, Japan",
         "Sewn textile sensors, Braille input recognition, electrothermal heating.", ["3 joint papers"])}
 {person("NH", "Nam-Tien Ha", "IntOr Lab, VinUniversity, Vietnam",
         "Fiber-based wearable textile biosensors.", ["1 joint paper", "1 joint presentation"], "warm")}
@@ -391,7 +391,7 @@ collaborators = '\n<h2 id="collaborators">Collaborators</h2>\n\n' + "\n\n".join(
         collab("XL", "Xiangyang Liu", "Xiamen University &middot; Quanzhou Normal University",
                [joint(1)], "alt", title="Nanqiang Distinguished Professor",
                roles="Ministry of Education Changjiang Scholar Chair Professor; National Overseas High-Level Talent Specially Appointed Professor."),
-        collab("LC", "Lina Cui", "College of Textiles and Apparel, Quanzhou Normal University",
+        collab("LC", "Lina Cui", "College of Textiles and Apparel, Quanzhou Normal University &middot; formerly Shinshu University, Japan",
                [joint(4)], "alt", title="Professor",
                roles="Vice Dean; Chair of the College Professors&rsquo; Committee; Deputy Secretary-General of the Fujian Textile Engineering Society."),
         collab("YZ", "Yinjia Zhang", "College of Textiles and Apparel, Quanzhou Normal University &middot; formerly Shinshu University, Japan",
@@ -400,9 +400,9 @@ collaborators = '\n<h2 id="collaborators">Collaborators</h2>\n\n' + "\n\n".join(
                [joint(3)], "alt"),
         collab("SC", "Si Chen", "Key Laboratory of Clothing Materials of Universities in Fujian, Quanzhou Normal University &middot; formerly Shinshu University, Japan",
                [joint(1)], "alt"),
-        collab("HW", "Hao Wang", "Department of Textile and Garment, Anhui Vocational and Technical College, Hefei",
+        collab("HW", "Hao Wang", "Department of Textile and Garment, Anhui Vocational and Technical College, Hefei &middot; formerly Shinshu University, Japan",
                [], "alt"),
-        collab("FL", "Fang Li", "Zhongyuan University of Technology, Zhengzhou",
+        collab("FL", "Fang Li", "Zhongyuan University of Technology, Zhengzhou &middot; formerly Shinshu University, Japan",
                [joint(1)], "alt"),
         collab("KC", "Kun Chen", "Zhejiang Sci-Tech University, Hangzhou",
                [joint(1)], "alt"),

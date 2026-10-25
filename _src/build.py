@@ -395,7 +395,7 @@ collaborators = '\n<h2 id="collaborators">Collaborators</h2>\n\n' + "\n\n".join(
                [joint(4)], "alt", title="Professor",
                roles="Vice Dean; Chair of the College Professors&rsquo; Committee; Deputy Secretary-General of the Fujian Textile Engineering Society."),
         collab("YZ", "Yinjia Zhang", "College of Textiles and Apparel, Quanzhou Normal University &middot; formerly Shinshu University, Japan",
-               [joint(6)], "alt", roles="Passive radiative-cooling membranes and wearable sensors."),
+               [joint(6)], "alt"),
         collab("XH", "Xinghua Hong", "State Key Laboratory of Bio-based Fiber Materials, Zhejiang Sci-Tech University",
                [joint(3)], "alt"),
         collab("SC", "Si Chen", "Key Laboratory of Clothing Materials of Universities in Fujian, Quanzhou Normal University &middot; formerly Shinshu University, Japan",

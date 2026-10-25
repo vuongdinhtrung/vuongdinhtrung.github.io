@@ -103,8 +103,6 @@ UNDER_REVIEW = [
      "X. Han, J. Natsuki, Y. Sun, W. Zhao, V.D. Trung, L. Cui, T. Natsuki"),
     ("Tunable Gas Sensors for Multi-Gas Recognition: Response Manifolds, Generated Selectivity, and Adaptive Operations",
      "H.H. Hau, V.D. Trung, T. Nguyen-Dang, N.D. Hoa, S.S. Park"),
-    ("Innovative Advances in Intelligent Droplet Microfluidics: From Machine Vision-Augmented Quantifications to Autonomous Control",
-     "V.D. Trung, H. Nguyen-Duc, W. Zhao, N.T. Ha, P.T. Bui, V.N. Quynh, X. Han, Y. Sun, T.N.H. Lo, T. Nguyen-Dang"),
     ("Skin-Inspired Wearable Tactile-Acoustic Sensor for Multimodal Physiological and Auditory Signal Recognition",
      "W. Zhao, V.D. Trung, T. Nguyen-Dang, J. Natsuki, H. Li, W. Yang, X. Wang, T. Natsuki"),
     ("Spray Coating Conjugated Polyelectrolyte Thin Film for Composite Electrochromic Devices",
@@ -113,6 +111,9 @@ UNDER_REVIEW = [
 
 # (year, title, authors, journal, vol/pages, doi, extra-html)
 PUBLISHED = [
+    (2026, "Innovative Advances in Intelligent Droplet Microfluidics: From Machine Vision-Augmented Quantifications to Autonomous Control",
+     "V.D. Trung*, W. Zhao, N.T. Ha, H. Nguyen-Duc, P.T. Bui, V.N. Quynh, X. Han, Y. Sun*, T.N.H. Lo*, T. Nguyen-Dang*",
+     "Mater. Des.", "in press, 117310", "10.1016/j.matdes.2026.117310", ""),
     (2026, "Weaving Intelligence: Multimaterial Thermally Drawn Fibers Toward AI-Enabled Smart Textiles",
      "V.D. Trung, J. Yi, H. Nguyen-Duc, T.N.H. Lo, W. Zhao, C. Dong, F. Sorin, B. Caglar, L. Wei, T. Nguyen-Dang",
      "Adv. Mater.", "<b>38</b>, e73574", "10.1002/adma.73574",
@@ -179,7 +180,7 @@ PUBLISHED = [
 ]
 N_PUB = len(PUBLISHED)
 N_FIRST = sum(1 for p in PUBLISHED if p[2].startswith(ME))
-assert N_PUB == 20 and N_FIRST == 8, (N_PUB, N_FIRST)
+assert N_PUB == 21 and N_FIRST == 9, (N_PUB, N_FIRST)
 
 # Articles found on ORCID that are not curated above (added automatically)
 EXTRA = [w for w in AUTO.get("extra_works", []) if w.get("year")]
@@ -314,21 +315,19 @@ ideas into research with real impact, followed by my collaborators.</p>
 <h2>Close colleagues</h2>
 <div class="people">
 {person("WZ", "Weili Zhao", "State Key Laboratory of Bio-based Fiber Materials, Zhejiang Sci-Tech University, China &middot; formerly Shinshu University, Japan",
-        "Textile pressure and strain sensors, electronic skin, pulse-wave monitoring.", ["13 joint papers"], photo="weili-zhao.jpg")}
+        "Textile pressure and strain sensors, electronic skin, pulse-wave monitoring.", ["14 joint papers"], photo="weili-zhao.jpg")}
 {person("TL", "Tien Nu Hoang Lo", "Center for Materials Innovation and Technology and College of Engineering and Computer Science, VinUniversity, Vietnam",
-        "Multimaterial fibers, droplet microfluidics, organic electronics.", ["1 joint paper"], "warm")}
-{person("YZ", "Yinjia Zhang", "College of Textiles and Apparel, Quanzhou Normal University, China &middot; formerly Shinshu University, Japan",
-        "Passive radiative-cooling membranes and wearable sensors.", ["6 joint papers"], "alt")}
+        "Multimaterial fibers, droplet microfluidics, organic electronics.", ["2 joint papers"], "warm")}
 {person("YS", "Yanyan Sun", "School of Textile and Garment, Anhui Polytechnic University, China &middot; formerly a student at Shinshu University, Japan",
-        "Textile and sewn strain sensors.", ["3 joint papers"], "alt")}
+        "Textile and sewn strain sensors.", ["4 joint papers"], "alt")}
 {person("XH", "Xiaoyu Han", "College of Textiles and Apparel, Quanzhou Normal University, China &middot; formerly a student at Shinshu University, Japan",
-        "Sewn textile sensors, Braille input recognition, electrothermal heating.", ["2 joint papers"])}
+        "Sewn textile sensors, Braille input recognition, electrothermal heating.", ["3 joint papers"])}
 {person("NH", "Nam-Tien Ha", "IntOr Lab, VinUniversity, Vietnam",
-        "Fiber-based wearable textile biosensors.", ["1 joint presentation"], "warm")}
-{person("SC", "Si Chen", "Key Laboratory of Clothing Materials of Universities in Fujian, Quanzhou Normal University, China &middot; formerly Shinshu University, Japan",
-        "Moisture-induced electric generators for self-powered wearables.", ["1 joint paper"])}
+        "Fiber-based wearable textile biosensors.", ["1 joint paper", "1 joint presentation"], "warm")}
 {person("VN", "Van Nhat Nguyen", "Department of Materials Science and Engineering, National Tsing Hua University, Taiwan",
         "", [], "alt")}
+{person("LZ", "Lvtao Zhu", "College of Textile Science and Engineering (International Institute of Silk), Zhejiang Sci-Tech University, China &middot; formerly senior visiting scholar, Shinshu University, Japan",
+        "Textile structural composites, impact dynamics of composites, high-performance fiber-reinforced composites.", ["Upcoming project: advanced composite materials"])}
 </div>
 
 @@COLLAB@@
@@ -358,7 +357,7 @@ BUCT = "College of Mechanical and Electrical Engineering, Beijing University of 
 collaborators = '\n<h2 id="collaborators">Collaborators</h2>\n\n' + "\n\n".join([
     country("vn", "Vietnam", [
         collab("TN", "Tung Nguyen-Dang", "College of Engineering and Computer Science, VinUniversity",
-               ["Postdoctoral supervisor", joint(2)], "warm", title="Assistant Professor",
+               ["Postdoctoral supervisor", joint(3)], "warm", title="Assistant Professor",
                roles="Director of Career and Industry Relations; Head of IntOr Lab."),
         collab("TD", "Ta Van Duong", "Department of Optical Equipment, Faculty of Weapons, Le Quy Don Technical University (Military Technical Academy), Hanoi",
                ["Lab-on-Fiber project, VINIF"], "warm", title="Associate Professor",
@@ -392,8 +391,12 @@ collaborators = '\n<h2 id="collaborators">Collaborators</h2>\n\n' + "\n\n".join(
         collab("LC", "Lina Cui", "College of Textiles and Apparel, Quanzhou Normal University",
                [joint(4)], "alt", title="Professor",
                roles="Vice Dean; Chair of the College Professors&rsquo; Committee; Deputy Secretary-General of the Fujian Textile Engineering Society."),
+        collab("YZ", "Yinjia Zhang", "College of Textiles and Apparel, Quanzhou Normal University &middot; formerly Shinshu University, Japan",
+               [joint(6)], "alt", roles="Passive radiative-cooling membranes and wearable sensors."),
         collab("XH", "Xinghua Hong", "State Key Laboratory of Bio-based Fiber Materials, Zhejiang Sci-Tech University",
                [joint(3)], "alt"),
+        collab("SC", "Si Chen", "Key Laboratory of Clothing Materials of Universities in Fujian, Quanzhou Normal University &middot; formerly Shinshu University, Japan",
+               [joint(1)], "alt", roles="Moisture-induced electric generators for self-powered wearables."),
         collab("HW", "Hao Wang", "Department of Textile and Garment, Anhui Vocational and Technical College, Hefei",
                [], "alt"),
         collab("FL", "Fang Li", "Zhongyuan University of Technology, Zhengzhou",
@@ -424,6 +427,7 @@ ur_items = [f'<li><span class="pt">{html.escape(t)}</span><span class="pa">{auth
 # Journal metrics from the latest editions available in the submission year:
 # doi -> (submitted year, JCR IF, JCR year, Scopus CiteScore highest-percentile "top %", CiteScore year)
 METRICS = {
+ "10.1016/j.matdes.2026.117310":     (2026, "8.2", 2025, 6, 2025),
  "10.1002/adma.73574":               (2026, "29.1", 2025, 1, 2025),
  "10.1016/j.cej.2026.179945":        (2026, "12.5", 2025, 4, 2025),
  "10.1007/s42765-026-00763-6":       (2026, "22.6", 2025, 1, 2025),
@@ -483,7 +487,7 @@ publications = f"""
 <p class="lead">Journal articles, patents, books, book chapters and conference presentations.</p>
 
 <h2>Journal articles</h2>
-<p class="small">IF: Journal Impact Factor (Clarivate JCR). Top %: Scopus CiteScore highest category percentile. Both from the latest editions available in the year each manuscript was submitted.</p>
+<p class="small">IF: Journal Impact Factor (Clarivate JCR). Top %: Scopus CiteScore highest category percentile. Both from the latest editions available in the year each manuscript was submitted. *: corresponding author.</p>
 {''.join(pub_sections)}
 
 <h2>Book chapter</h2>

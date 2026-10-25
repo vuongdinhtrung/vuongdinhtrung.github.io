@@ -112,7 +112,7 @@ UNDER_REVIEW = [
 # (year, title, authors, journal, vol/pages, doi, extra-html)
 PUBLISHED = [
     (2026, "Innovative Advances in Intelligent Droplet Microfluidics: From Machine Vision-Augmented Quantifications to Autonomous Control",
-     "V.D. Trung*, W. Zhao, N.T. Ha, H. Nguyen-Duc, P.T. Bui, V.N. Quynh, X. Han, Y. Sun*, T.N.H. Lo*, T. Nguyen-Dang*",
+     "V.D. Trung*, W. Zhao, N.T. Ha, H. Nguyen-Duc, P.T. Bui, V.N. Quynh, X. Han, Y. Sun, T.N.H. Lo, T. Nguyen-Dang",
      "Mater. Des.", "in press, 117310", "10.1016/j.matdes.2026.117310", ""),
     (2026, "Weaving Intelligence: Multimaterial Thermally Drawn Fibers Toward AI-Enabled Smart Textiles",
      "V.D. Trung, J. Yi, H. Nguyen-Duc, T.N.H. Lo, W. Zhao, C. Dong, F. Sorin, B. Caglar, L. Wei, T. Nguyen-Dang",
@@ -192,7 +192,10 @@ MET_URL = LINKS["scholar"] if MET_SRC == "Google Scholar" else "https://openalex
 
 
 def authors(s):
-    return html.escape(s).replace(ME, f"<b>{ME}</b>")
+    e = html.escape(s)
+    if ME + "*" in e:  # corresponding author: bold the name and the asterisk
+        return e.replace(ME + "*", f"<b>{ME}*</b>")
+    return e.replace(ME, f"<b>{ME}</b>")
 
 
 # =====================================================================
@@ -396,7 +399,7 @@ collaborators = '\n<h2 id="collaborators">Collaborators</h2>\n\n' + "\n\n".join(
         collab("XH", "Xinghua Hong", "State Key Laboratory of Bio-based Fiber Materials, Zhejiang Sci-Tech University",
                [joint(3)], "alt"),
         collab("SC", "Si Chen", "Key Laboratory of Clothing Materials of Universities in Fujian, Quanzhou Normal University &middot; formerly Shinshu University, Japan",
-               [joint(1)], "alt", roles="Moisture-induced electric generators for self-powered wearables."),
+               [joint(1)], "alt"),
         collab("HW", "Hao Wang", "Department of Textile and Garment, Anhui Vocational and Technical College, Hefei",
                [], "alt"),
         collab("FL", "Fang Li", "Zhongyuan University of Technology, Zhengzhou",

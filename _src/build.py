@@ -559,6 +559,7 @@ news = f"""
     ("Aug 2026", '<a href="https://laidlawscholars.network/posts/i-flew-across-the-world-to-sit-in-silence"><b>I flew across the world to sit in silence</b></a><span class="sub">Laidlaw Scholars Network &middot; a Cornell University student reflects on a research internship in our lab at VinUniversity</span>'),
     ("Jun 2026", '<a href="https://vinuni.edu.vn/icmit-2026-over-100-leading-materials-scientists-convene-at-vinuniversity/"><b>ICMIT 2026: Over 100 leading materials scientists convene at VinUniversity</b></a><span class="sub">VinUniversity News &middot; the conference I helped organize and where I chaired the Biomaterials &amp; Nanotechnology session</span>'),
     ("Jun 2026", '<a href="https://vinuni.edu.vn/breakthrough-research-from-vinuniversity-featured-in-the-worlds-top-materials-science-journal-advanced-materials/"><b>Breakthrough research from VinUniversity featured in the world&rsquo;s top materials science journal <i>Advanced Materials</i></b></a><span class="sub">VinUniversity News &middot; on our review of smart fibers for AI-integrated textiles</span>'),
+    ("Jun 2026", '<a href="https://mp.weixin.qq.com/s/oa70RSlYFu8sTNNaiLd0HA"><b>Weaving Intelligence: Thermally Drawn Multimaterial Fibers Toward AI-Enabled Smart Textiles</b></a><span class="sub">Frontiers in Computational Chemistry (<span lang="zh">计算化学前沿</span>) WeChat account (in Chinese) &middot; on our <i>Advanced Materials</i> review of thermally drawn multimaterial fibers for AI-enabled smart textiles</span>'),
 ])}
 """
 

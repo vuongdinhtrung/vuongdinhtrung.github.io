@@ -521,7 +521,7 @@ outreach = f"""
 
 <h2>Editorial &amp; peer review</h2>
 {rows([
-    ("Guest Editor", '<b>MDPI <i>Polymers</i></b>, Special Issue &ldquo;Advanced Polymer Materials for Electronics and Smart Devices&rdquo;'),
+    ("Guest Editor", '<b>MDPI <i>Polymers</i></b>, upcoming Special Issue &ldquo;Advanced Polymer Materials for Electronics and Smart Devices&rdquo;'),
     ("Reviewer", '<span class="sub" style="margin-bottom:6px">Journals listed on <a href="' + LINKS['orcid'] + '">ORCID</a></span><div class="jchips"><span class="jchip"><i>ACS Applied Polymer Materials</i></span><span class="jchip"><i>Advanced Functional Materials</i></span><span class="jchip"><i>Advanced Materials Technologies</i></span><span class="jchip"><i>Applied Physics A</i></span><span class="jchip"><i>Carbon</i></span><span class="jchip"><i>Chemical Engineering Journal</i></span><span class="jchip"><i>Composites Part B: Engineering</i></span><span class="jchip"><i>iScience</i></span><span class="jchip"><i>Journal of Alloys and Compounds</i></span><span class="jchip"><i>Journal of Hazardous Materials Advances</i></span><span class="jchip"><i>Micromachines</i></span><span class="jchip"><i>Nano Energy</i></span><span class="jchip"><i>Nanomaterials</i></span><span class="jchip"><i>RSC Advances</i></span><span class="jchip"><i>Sensors</i></span><span class="jchip"><i>Soft Science</i></span></div>'),
 ])}
 

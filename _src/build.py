@@ -113,7 +113,7 @@ UNDER_REVIEW = [
 PUBLISHED = [
     (2026, "Innovative Advances in Intelligent Droplet Microfluidics: From Machine Vision-Augmented Quantifications to Autonomous Control",
      "V.D. Trung*, W. Zhao, N.T. Ha, H. Nguyen-Duc, P.T. Bui, V.N. Quynh, X. Han, Y. Sun, T.N.H. Lo, T. Nguyen-Dang",
-     "Mater. Des.", "in press, 117310", "10.1016/j.matdes.2026.117310", ""),
+     "Mater. Des.", "272, 117310", "10.1016/j.matdes.2026.117310", ""),
     (2026, "Weaving Intelligence: Multimaterial Thermally Drawn Fibers Toward AI-Enabled Smart Textiles",
      "V.D. Trung, J. Yi, H. Nguyen-Duc, T.N.H. Lo, W. Zhao, C. Dong, F. Sorin, B. Caglar, L. Wei, T. Nguyen-Dang",
      "Adv. Mater.", "<b>38</b>, e73574", "10.1002/adma.73574",

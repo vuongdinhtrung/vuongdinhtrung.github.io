@@ -231,7 +231,7 @@ about = f"""
   <div class="stat"><span class="n">{MET.get("citations", "&ndash;")}</span><span class="l">citations</span></div>
   <div class="stat"><span class="n">{MET.get("h_index", "&ndash;")}</span><span class="l">h-index</span></div>
   <div class="stat"><span class="n">4</span><span class="l">grants contributed to (Co-PI / member) &middot; total USD 457K</span></div>
-  <div class="stat"><span class="n">1</span><span class="l">patent</span></div>
+  <div class="stat"><span class="n">2</span><span class="l">patents</span></div>
   <div class="stat"><span class="n">{PEER}</span><span class="l">peer reviews for journals</span></div>
 </section>
 
@@ -497,8 +497,10 @@ publications = f"""
 <ol class="pubs"><li><span class="pt">Artificial Intelligence in Thermally Drawn Multimaterial Fibers: From Distributed Sensing to Neuromorphic Smart Textiles</span>
 <span class="pa"><b>V.D. Trung</b>, T. Nguyen-Dang</span><span class="pv">In V. Robles-Bykbaev (Ed.), <i>Applied Intelligence Annual Volume 2026</i> (working title), Artificial Intelligence book series, IntechOpen.</span><span class="mnote">ISBN 978-1-83635-727-8 &middot; Print ISBN 978-1-83635-728-5 &middot; eBook (PDF) ISBN 978-1-83635-729-2 &middot; ISSN 2633-1403 &middot; DOI 10.5772/intechopen.1010756 (to be assigned)</span></li></ol>
 
-<h2>Patent</h2>
+<h2>Patents</h2>
 <ol class="pubs">
+<li><span class="pt">Protective Frame for Drone Motors and Propellers (<i lang="vi">Bộ khung bảo vệ động cơ và cánh quạt máy bay không người lái</i>)</span><span class="pa">N.D. Tung, <b>V.D. Trung</b>, H.N. Tien, N.D. Hieu, P.A. Toe, N.T. Dung, L.D. Khue</span>
+<span class="pv">Vietnamese Patent Application No. 1-2026-08620, filed 1 Oct 2026, published 2 Nov 2026 (Publication No. 130745 A). Applicant: VinUniversity. <a class="btn" href="https://wipopublish.ipvietnam.gov.vn/wopublish-search/public/detail/patents?id=VN1202608620">IP Viet Nam record</a></span></li>
 <li><span class="pt">Aircraft Protective Frame (<i lang="vi">Khung bảo vệ thiết bị bay</i>)</span><span class="pa">L.D. Dung, N.T. Phong, N.D. Hieu, <b>V.D. Trung</b>, N.D. Tung, A. Hajjar</span>
 <span class="pv">Vietnamese Industrial Design Application No. 3-2026-00893, filed 20 Apr 2026, published 15 Jul 2026 (Publication No. 58035). Applicant: VinUniversity. <a class="btn" href="https://wipopublish.ipvietnam.gov.vn/wopublish-search/public/designs?lang=en&amp;query=%223-2026-00893%22">IP Viet Nam record</a></span></li>
 </ol>

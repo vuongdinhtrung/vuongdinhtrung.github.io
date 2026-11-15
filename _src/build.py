@@ -321,6 +321,8 @@ ideas into research with real impact, followed by my collaborators.</p>
         "Textile pressure and strain sensors, electronic skin, pulse-wave monitoring.", ["14 joint papers"], photo="weili-zhao.jpg")}
 {person("TL", "Tien Nu Hoang Lo", "Center for Materials Innovation and Technology and College of Engineering and Computer Science, VinUniversity, Vietnam",
         "Multimaterial fibers, droplet microfluidics, organic electronics.", ["2 joint papers"], "warm")}
+{person("NN", "Nguyen Thi Phuong Nhung", "Petroleum Engineering Department, Petroleum Faculty, PetroVietnam University, Vietnam",
+        "Surface chemistry, lab-on-chip, micro/nanostructured superhydrophobic and superomniphobic surfaces.", [])}
 {person("YS", "Yanyan Sun", "School of Textile and Garment, Anhui Polytechnic University, China &middot; formerly Shinshu University, Japan",
         "Textile and sewn strain sensors.", ["4 joint papers"], "alt")}
 {person("XH", "Xiaoyu Han", "College of Textiles and Apparel, Quanzhou Normal University, China &middot; formerly Shinshu University, Japan",

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Class Poll</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+:root{
+  --bg:#f2f4f8; --surface:#fff; --ink:#141a2c; --muted:#5b6377; --line:#dce0ea; --accent:#22306f;
+  --yes:#1b7d53; --yes-soft:#e2f2e9; --no:#c43e2e; --no-soft:#fbe6e2;
+  --display:"Archivo",Arial,sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif;
+}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body)}
+[hidden]{display:none!important}
+.wrap{max-width:1060px;margin:0 auto;padding:20px 16px 48px;display:grid;gap:16px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+h1{font-family:var(--display);font-weight:800;font-size:20px;margin:0}
+.pill{font:600 13px var(--body);padding:6px 11px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--muted)}
+.pill.open{color:var(--yes)} .pill.closed{color:var(--no)}
+.btn{font:600 15px var(--body);padding:11px 16px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn.warn{color:var(--no)} .btn:disabled{opacity:.45;cursor:not-allowed}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px}
+.q{font-family:var(--display);font-weight:800;font-size:clamp(26px,4vw,44px);line-height:1.12;margin:0;overflow-wrap:anywhere}
+.muted{color:var(--muted)}
+.compose{display:flex;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:8px}
+.compose input{flex:1;min-width:0;font:500 17px var(--body);border:0;outline:0;padding:8px 10px;background:transparent}
+.stage{display:grid;grid-template-columns:1fr 220px;gap:28px}
+.bars{display:grid;gap:14px;margin-top:24px}
+.bar{display:grid;grid-template-columns:56px 1fr 120px;align-items:center;gap:14px}
+.lab{font-family:var(--display);font-weight:800;font-size:22px}
+.track{height:46px;border-radius:10px;background:var(--bg);overflow:hidden}
+.fill{height:100%;width:0;transition:width .5s}
+.yes .fill{background:var(--yes)} .no .fill{background:var(--no)} .yes .lab{color:var(--yes)} .no .lab{color:var(--no)}
+.val{font-variant-numeric:tabular-nums;font-weight:600;font-size:22px;text-align:right}
+.big{font-family:var(--display);font-weight:800;font-size:56px;font-variant-numeric:tabular-nums}
+.controls{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.qr{background:#fff;padding:10px;border-radius:12px;width:max-content}
+.qr img{width:180px;height:auto}
+.choices{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0}
+.choice{font-family:var(--display);font-weight:800;font-size:34px;min-height:132px;border-radius:16px;border:2px solid transparent;cursor:pointer}
+.choice.yes{background:var(--yes-soft);color:var(--yes)} .choice.no{background:var(--no-soft);color:var(--no)}
+.choice.on.yes{background:var(--yes);color:#fff} .choice.on.no{background:var(--no);color:#fff}
+.choice:disabled{opacity:.55;cursor:not-allowed}
+.err{background:var(--surface);border-left:4px solid var(--no);border-radius:10px;padding:12px 14px}
+code{background:var(--bg);padding:2px 6px;border-radius:6px;word-break:break-all}
+.stage:fullscreen{background:var(--surface);padding:6vh 5vw;align-content:center}
+.stage:fullscreen .q{font-size:64px} .stage:fullscreen .controls{display:none}
+@media (max-width:760px){.stage{grid-template-columns:1fr}.bar{grid-template-columns:48px 1fr 100px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <h1>Class Poll</h1>
+    <div style="display:flex;gap:8px;align-items:center">
+      <span class="pill" id="pill">Connecting…</span>
+      <button class="btn" id="bFull" hidden>Full screen</button>
+    </div>
+  </div>
+  <div class="err" id="err" hidden></div>
+
+  <!-- Instructor: open this page with ?host at the end of the URL -->
+  <section id="host" hidden style="display:grid;gap:16px">
+    <form class="compose" id="compose">
+      <input id="qInput" maxlength="200" placeholder="Type a yes/no question">
+      <button class="btn primary">Ask</button>
+    </form>
+    <div class="card stage" id="stage">
+      <div>
+        <p class="q" id="hQ">Type a question above, then press Ask.</p>
+        <p class="muted" id="hMeta"></p>
+        <div class="bars" id="bars" hidden>
+          <div class="bar yes"><span class="lab">Yes</span><div class="track"><div class="fill" id="fYes"></div></div><span class="val" id="vYes">0</span></div>
+          <div class="bar no"><span class="lab">No</span><div class="track"><div class="fill" id="fNo"></div></div><span class="val" id="vNo">0</span></div>
+        </div>
+        <div id="hiddenRes"><span class="big" id="count">0</span> <span class="muted">answers in, results hidden</span></div>
+        <div class="controls">
+          <button class="btn primary" id="bReveal" type="button">Show results</button>
+          <button class="btn" id="bOpen" type="button">Close voting</button>
+          <button class="btn warn" id="bRestart" type="button">Restart votes</button>
+        </div>
+      </div>
+      <div>
+        <p class="muted" style="margin-top:0">Scan to vote</p>
+        <div class="qr" id="qr"></div>
+        <p class="muted" id="joinUrl" style="font-size:13px;word-break:break-all"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Student -->
+  <section id="student" class="card">
+    <p class="q" id="sQ">Connecting…</p>
+    <div class="choices" id="choices" hidden>
+      <button class="choice yes" id="cyes">Yes</button>
+      <button class="choice no" id="cno">No</button>
+    </div>
+    <p class="muted" id="sStatus"></p>
+  </section>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getDatabase, ref, onValue, set } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+// Firebase project "class-poll" (web config is public by design; access is controlled by the database rules).
+const firebaseConfig = {
+  apiKey: "AIzaSyDjOMbL51e1sO1VzhOshbLHBQ243Rq8A3U",
+  authDomain: "class-poll-1dd1d.firebaseapp.com",
+  databaseURL: "https://class-poll-1dd1d-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "class-poll-1dd1d",
+  appId: "1:612900359240:web:70a042abdc71d131e55c7d"
+};
+
+const $ = s => document.querySelector(s);
+const isHost = new URLSearchParams(location.search).has("host");
+const setupProblem =
+  location.protocol === "file:" ? "This page must be opened from a web address (e.g. GitHub Pages), not as a file on your computer."
+  : JSON.stringify(firebaseConfig).includes("PASTE_") ? "Firebase is not set up yet: fill in firebaseConfig in index.html."
+  : "";
+if (setupProblem) {
+  document.querySelector("#err").textContent = setupProblem;
+  document.querySelector("#err").hidden = false;
+  document.querySelector("#pill").textContent = "Not connected";
+  document.querySelector("#sQ").textContent = "This poll isn't connected yet.";
+  throw new Error(setupProblem);
+}
+const db = getDatabase(initializeApp(firebaseConfig));
+const auth = getAuth();
+let uid = null, poll = null, myVote = null, counts = { yes: 0, no: 0 }, reveal = false, stopVotes = null, stopMine = null, restartArmed = false;
+
+const showErr = m => { $("#err").textContent = m; $("#err").hidden = !m; };
+const newQid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+
+onAuthStateChanged(auth, user => {
+  if (!user) return;
+  uid = user.uid;
+  onValue(ref(db, "poll"), snap => { poll = snap.val(); watchVotes(); render(); },
+    e => showErr("Can't read the poll: " + e.message));
+});
+signInAnonymously(auth).catch(e => showErr(
+  e.code === "auth/admin-restricted-operation" || e.code === "auth/operation-not-allowed"
+    ? "Turn on Anonymous sign-in: Firebase console > Authentication > Sign-in method > Anonymous."
+  : String(e.code).includes("api-key") ? "The apiKey in firebaseConfig is wrong. Copy it again from Project settings."
+  : e.code === "auth/unauthorized-domain" ? "Add this site's domain in Firebase console > Authentication > Settings > Authorized domains."
+  : "Can't connect to Firebase (" + e.code + ")."));
+
+function watchVotes() {
+  const qid = poll && poll.qid;
+  if (stopMine) stopMine(); stopMine = null; myVote = null;
+  if (stopVotes) stopVotes(); stopVotes = null; counts = { yes: 0, no: 0 };
+  if (!qid) return;
+  stopMine = onValue(ref(db, `votes/${qid}/${uid}`), s => { myVote = s.val(); render(); });
+  if (isHost) stopVotes = onValue(ref(db, `votes/${qid}`), s => {
+    counts = { yes: 0, no: 0 };
+    Object.values(s.val() || {}).forEach(v => { if (v === "yes" || v === "no") counts[v]++; });
+    render();
+  }, () => {});
+}
+
+async function writePoll(patch) {
+  try { await set(ref(db, "poll"), { ...(poll || {}), ...patch, updatedAt: Date.now() }); showErr(""); }
+  catch (e) { showErr("Only the instructor can change the poll. Your instructor ID is " + uid + " — put it in the database rules."); }
+}
+
+function render() {
+  const has = !!(poll && poll.qid);
+  const pill = $("#pill");
+  pill.className = "pill " + (!has ? "" : poll.open ? "open" : "closed");
+  pill.textContent = !has ? "No question yet" : poll.open ? "Voting open" : "Voting closed";
+  $("#host").hidden = !isHost; $("#student").hidden = isHost; $("#bFull").hidden = !isHost;
+
+  if (isHost) {
+    const t = counts.yes + counts.no, py = t ? Math.round(counts.yes * 100 / t) : 0, pn = t ? 100 - py : 0;
+    $("#hQ").textContent = has ? poll.question : "Type a question above, then press Ask.";
+    $("#hMeta").textContent = has ? `${t} ${t === 1 ? "answer" : "answers"} · ${poll.open ? "voting open" : "voting closed"}` : "";
+    $("#bars").hidden = !has || !reveal; $("#hiddenRes").hidden = !has || reveal;
+    $("#count").textContent = t;
+    $("#fYes").style.width = py + "%"; $("#fNo").style.width = pn + "%";
+    $("#vYes").textContent = `${counts.yes} · ${py}%`; $("#vNo").textContent = `${counts.no} · ${pn}%`;
+    $("#bReveal").textContent = reveal ? "Hide results" : "Show results";
+    $("#bOpen").textContent = has && poll.open ? "Close voting" : "Reopen voting";
+    $("#bRestart").textContent = restartArmed ? "Click again to restart" : "Restart votes";
+    ["#bReveal", "#bOpen", "#bRestart"].forEach(s => $(s).disabled = !has);
+  } else {
+    const open = has && poll.open;
+    $("#sQ").textContent = has ? poll.question : "Waiting for the question…";
+    $("#choices").hidden = !has;
+    ["yes", "no"].forEach(c => { const b = $("#c" + c); b.disabled = !open; b.classList.toggle("on", myVote === c); });
+    const ans = myVote ? `You answered ${myVote === "yes" ? "Yes" : "No"}. ` : "";
+    $("#sStatus").textContent = !has ? "The question appears here as soon as your instructor asks it."
+      : open ? ans + "You can change it until voting closes." : "Voting is closed. " + (ans || "You didn't answer this question.");
+  }
+}
+
+async function vote(choice) {
+  if (!poll || !poll.open || !uid) return;
+  myVote = choice; render();
+  try { await set(ref(db, `votes/${poll.qid}/${uid}`), choice); showErr(""); }
+  catch (e) { showErr("Your answer wasn't saved. Voting may be closed; try again."); }
+}
+$("#cyes").onclick = () => vote("yes");
+$("#cno").onclick = () => vote("no");
+
+$("#compose").onsubmit = e => {
+  e.preventDefault();
+  const q = $("#qInput").value.trim(); if (!q) return;
+  reveal = false; writePoll({ qid: newQid(), question: q, open: true }); $("#qInput").value = "";
+};
+$("#bReveal").onclick = () => { reveal = !reveal; render(); };
+$("#bOpen").onclick = () => writePoll({ open: !poll.open });
+$("#bRestart").onclick = () => {
+  if (!restartArmed) { restartArmed = true; render(); setTimeout(() => { restartArmed = false; render(); }, 3000); return; }
+  restartArmed = false; reveal = false; writePoll({ qid: newQid(), open: true });
+};
+$("#bFull").onclick = () => document.fullscreenElement ? document.exitFullscreen() : $("#stage").requestFullscreen().catch(() => {});
+
+if (isHost) {
+  const joinUrl = location.origin + location.pathname;
+  $("#joinUrl").textContent = joinUrl;
+  if (window.QRCode) new QRCode($("#qr"), { text: joinUrl, width: 360, height: 360 });
+}
+</script>
+</body>
+</html>

@@ -18,6 +18,7 @@ EMAIL = "trung.vd2@vinuni.edu.vn"
 LINKS = {
     "scholar": "https://scholar.google.com/citations?user=-c7W-o0AAAAJ",
     "orcid": "https://orcid.org/0000-0001-5032-292X",
+    "sciprofiles": "https://sciprofiles.com/profile/vuong-trung",
     "github": "https://github.com/vdtrung96",
     "linkedin": "https://www.linkedin.com/in/trung-vuong",
     "cv": "https://docs.google.com/document/d/1NEw9mI0M1JVqCwqg6WKjQTHhJ649v-qM/edit?usp=sharing&ouid=101029776121650064169&rtpof=true&sd=true",
@@ -77,6 +78,7 @@ def icons():
   <a class="i-mail" href="mailto:{EMAIL}" title="Email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
   <a class="i-gs" href="{LINKS['scholar']}" title="Google Scholar" aria-label="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
   <a class="i-orcid" href="{LINKS['orcid']}" title="ORCID" aria-label="ORCID"><i class="fa-brands fa-orcid"></i></a>
+  <a class="i-sp" href="{LINKS['sciprofiles']}" title="SciProfiles" aria-label="SciProfiles"><i class="fa-solid fa-id-card"></i></a>
   <a class="i-gh" href="{LINKS['github']}" title="GitHub" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
   <a class="i-li" href="{LINKS['linkedin']}" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
 </div>"""

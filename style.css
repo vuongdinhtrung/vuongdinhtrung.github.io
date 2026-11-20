@@ -63,7 +63,7 @@ b,strong{font-weight:700}
 .icons a{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;
   color:#fff;font-size:21px;transition:transform .15s}
 .icons a:hover{transform:translateY(-2px);text-decoration:none}
-.i-mail{background:#3d8bd8}.i-gs{background:#4285f4}.i-orcid{background:#a6ce39}
+.i-mail{background:#3d8bd8}.i-gs{background:#4285f4}.i-orcid{background:#a6ce39}.i-sp{background:#6f42c1}
 .i-gh{background:#24292f}.i-li{background:#0a66c2}.i-fb{background:#1877f2}.i-cv{background:#0e7c86}
 
 /* ---------- stat strip ---------- */

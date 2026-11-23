@@ -499,7 +499,7 @@ publications = f"""
 
 <h2>Book chapter</h2>
 <ol class="pubs"><li><span class="pt">Artificial Intelligence in Thermally Drawn Multimaterial Fibers: From Distributed Sensing to Neuromorphic Smart Textiles</span>
-<span class="pa"><b>V.D. Trung*</b>, T. Nguyen-Dang</span><span class="pv">In V. Robles-Bykbaev (Ed.), <i>Applied Intelligence Annual Volume 2026</i> (working title), Artificial Intelligence book series, IntechOpen. Online First, 22 Nov 2026. <a class="btn" href="https://doi.org/10.5772/intechopen.1018126">DOI</a></span><span class="mnote">Chapter DOI 10.5772/intechopen.1018126 &middot; ISBN 978-1-83635-727-8 &middot; Print ISBN 978-1-83635-728-5 &middot; eBook (PDF) ISBN 978-1-83635-729-2 &middot; ISSN 2633-1403</span></li></ol>
+<span class="pa"><b>V.D. Trung*</b>, T. Nguyen-Dang</span><span class="pv">In V. Robles-Bykbaev (Ed.), <i>Applied Intelligence Annual Volume 2026</i> (working title), Artificial Intelligence book series, IntechOpen. Online First, 22 Nov 2026. <a class="btn" href="https://www.intechopen.com/online-first/1266034">IntechOpen</a></span><span class="mnote">Chapter DOI 10.5772/intechopen.1018126 &middot; ISBN 978-1-83635-727-8 &middot; Print ISBN 978-1-83635-728-5 &middot; eBook (PDF) ISBN 978-1-83635-729-2 &middot; ISSN 2633-1403</span></li></ol>
 
 <h2>Patents</h2>
 <ol class="pubs">

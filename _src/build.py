@@ -230,11 +230,11 @@ about = f"""
 
 <section class="stats">
   <div class="stat"><span class="n">{N_ART}</span><span class="l">peer-reviewed journal articles</span></div>
-  <div class="stat"><span class="n">{MET.get("citations", "&ndash;")}</span><span class="l">citations</span></div>
   <div class="stat"><span class="n">1</span><span class="l">book chapter</span></div>
-  <div class="stat"><span class="n">4</span><span class="l">grants contributed to (Co-PI / member) &middot; total USD 457K</span></div>
-  <div class="stat"><span class="n">2</span><span class="l">patents</span></div>
+  <div class="stat"><span class="n">2</span><span class="l">patents (accepted or under examination)</span></div>
   <div class="stat"><span class="n">{PEER}</span><span class="l">peer reviews for journals</span></div>
+  <div class="stat"><span class="n">{MET.get("citations", "&ndash;")}</span><span class="l">citations</span></div>
+  <div class="stat"><span class="n">4</span><span class="l">grants contributed to (Co-PI / member) &middot; total USD 457K</span></div>
 </section>
 
 <h2>Research Interests</h2>

@@ -458,6 +458,38 @@ METRICS = {
 }
 assert set(METRICS) == {p[5] for p in PUBLISHED}
 
+# Journals published in, with the 2025 Journal Impact Factor (Clarivate JCR, released in 2026) as shown
+# on each journal's own page in November 2026. Shown as covers beside the article list, highest IF first.
+# (abbreviation used above, full title, 2025 IF, cover image in covers/ and its height at 200 px wide, journal page)
+JOURNALS = [
+    ("Adv. Mater.", "Advanced Materials", "29.1", "adv-mater", 264, "https://advanced.onlinelibrary.wiley.com/journal/15214095"),
+    ("Adv. Fiber Mater.", "Advanced Fiber Materials", "22.6", "adv-fiber-mater", 266, "https://link.springer.com/journal/42765"),
+    ("Chem. Eng. J.", "Chemical Engineering Journal", "12.5", "chem-eng-j", 267, "https://www.sciencedirect.com/journal/chemical-engineering-journal"),
+    ("Mater. Des.", "Materials & Design", "8.2", "mater-des", 267, "https://www.sciencedirect.com/journal/materials-and-design"),
+    ("Mater. Today Chem.", "Materials Today Chemistry", "7.4", "mater-today-chem", 282, "https://www.sciencedirect.com/journal/materials-today-chemistry"),
+    ("J. Alloys Compd.", "Journal of Alloys and Compounds", "6.7", "j-alloys-compd", 267, "https://www.sciencedirect.com/journal/journal-of-alloys-and-compounds"),
+    ("RSC Adv.", "RSC Advances", "6.1", "rsc-adv", 262, "https://pubs.rsc.org/ra"),
+    ("Adv. Mater. Technol.", "Advanced Materials Technologies", "6.0", "adv-mater-technol", 264, "https://advanced.onlinelibrary.wiley.com/journal/2365709x"),
+    ("Energy Fuels", "Energy & Fuels", "6.0", "energy-fuels", 266, "https://pubs.acs.org/journal/enfuem"),
+    ("Mater. Res. Bull.", "Materials Research Bulletin", "5.8", "mater-res-bull", 267, "https://www.sciencedirect.com/journal/materials-research-bulletin"),
+    ("Polymers", "Polymers", "5.8", "polymers", 287, "https://www.mdpi.com/journal/polymers"),
+    ("ChemNanoMat", "ChemNanoMat", "2.6", "chemnanomat", 267, "https://aces.onlinelibrary.wiley.com/journal/2199692x"),
+    ("J. Text. Inst.", "The Journal of The Textile Institute", "1.6", "j-text-inst", 262, "https://www.tandfonline.com/journals/tjti20"),
+]
+assert {j[0] for j in JOURNALS} == {p[3] for p in PUBLISHED}
+
+def journal_covers():
+    out = ['<aside class="jcovers" aria-label="Journals published in, ranked by 2025 Impact Factor">',
+           '<p class="jc-note">Ranked by 2025 Impact Factor</p>', '<ol>']
+    for ab, full, jif, f, h, url in sorted(JOURNALS, key=lambda j: -float(j[2])):
+        n = sum(1 for p in PUBLISHED if p[3] == ab)
+        tip = html.escape(f"{full} \u00b7 2025 Impact Factor {jif} \u00b7 {n} article{'s' if n > 1 else ''}")
+        out.append(f'<li><a href="{url}" title="{tip}"><img src="covers/{f}.webp" width="200" height="{h}" '
+                   f'alt="{html.escape(full)} cover" loading="lazy"></a>'
+                   f'<span class="jc-name"><i>{ab}</i></span><span class="metric if">IF {jif}</span></li>')
+    out += ['</ol>', '<p class="jc-note jc-credit">Cover images &copy; their publishers.</p>', '</aside>']
+    return "\n".join(out)
+
 def metric_line(d):
     sub, jif, jy, top, cy = METRICS[d]
     return (f'<span class="metrics"><span class="metric if" title="Journal Impact Factor, JCR {jy}">IF {jif}</span>'
@@ -495,7 +527,12 @@ publications = f"""
 
 <h2>Journal articles</h2>
 <p class="small">IF: Journal Impact Factor (Clarivate JCR). Top %: Scopus CiteScore highest category percentile. Both from the latest editions available in the year each manuscript was submitted. *: corresponding author.</p>
+<div class="pubgrid">
+{journal_covers()}
+<div class="publist">
 {''.join(pub_sections)}
+</div>
+</div>
 
 <h2>Book chapter</h2>
 <ol class="pubs"><li><span class="pt">Artificial Intelligence in Thermally Drawn Multimaterial Fibers: From Distributed Sensing to Neuromorphic Smart Textiles</span>

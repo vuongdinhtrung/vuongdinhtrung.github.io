@@ -486,7 +486,7 @@ def journal_covers():
         tip = html.escape(f"{full} \u00b7 2025 Impact Factor {jif} \u00b7 {n} article{'s' if n > 1 else ''}")
         out.append(f'<li><a href="{url}" title="{tip}"><img src="covers/{f}.webp" width="200" height="{h}" '
                    f'alt="{html.escape(full)} cover" loading="lazy"></a>'
-                   f'<span class="jc-name"><i>{ab}</i></span><span class="metric if">IF {jif}</span></li>')
+                   f'<span class="jc-name"><i>{ab}</i></span></li>')
     out += ['</ol>', '<p class="jc-note jc-credit">Cover images &copy; their publishers.</p>', '</aside>']
     return "\n".join(out)
 

@@ -480,7 +480,7 @@ assert {j[0] for j in JOURNALS} == {p[3] for p in PUBLISHED}
 
 def journal_covers():
     out = ['<aside class="jcovers" aria-label="Journals published in, ranked by 2025 Impact Factor">',
-           '<p class="jc-note">Ranked by 2025 Impact Factor</p>', '<ol>']
+           '<ol>']
     for ab, full, jif, f, h, url in sorted(JOURNALS, key=lambda j: -float(j[2])):
         n = sum(1 for p in PUBLISHED if p[3] == ab)
         tip = html.escape(f"{full} \u00b7 2025 Impact Factor {jif} \u00b7 {n} article{'s' if n > 1 else ''}")
